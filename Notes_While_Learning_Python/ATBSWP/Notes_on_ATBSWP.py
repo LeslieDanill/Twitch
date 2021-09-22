@@ -139,7 +139,45 @@ count = {}
 
 for char in message.lower():
     count[char] = count.get(char, 0) + 1
+
+
+# --- Data Structures -- #
+print('Hello tab> \t newline> \n')
+r''
+
+#-- Object-Oriented Programming MIT https://www.youtube.com/watch?v=-DP1i2ZU9gk --#
+class Coordinate(object):
+    def __init__ (self, x, y):
+        self.x = x
+        self.y = y
+    def distance (self, other):
+        x_diff_sq = (self.x - other.x)**2
+        y_diff_sq = (self.y - other.y)**2
+        return (x_diff_sq + y_diff_sq)**0.5
+    def __str__ (self):
+        return "<" + str(self.x) + "," + str(self.y) + ">"
+
+c = Coordinate(3,4)
+zero = Coordinate(0,0)
+print(c.distance(zero))
+print(Coordinate.distance(c,zero))
+print(c)
+print(type(c))
+print(Coordinate)
+print(type(Coordinate))
 '''
+#--- String Interpolation %s or look at f strings ---#
+
+# --- REGEX ---#
+import re
+message = "Call me at 000-111-2222"
+# (\d{3}\-){2}\d{4}
+rePhoneNum = re.compile(r"((?:\d{3}\-){2}\d{4})")
+# mo = rePhoneNum.search(message)
+mo = rePhoneNum.findall(message)
+#print(mo.group())
+print(mo)
+
 
 
 
