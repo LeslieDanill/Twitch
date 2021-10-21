@@ -1,16 +1,39 @@
+const tasks = [{username:"lesliedanill", task: "go to sleep", status:"done"}];
 
-/*
-
-var tasks = [{userid: "", username: "coolguy1", task: "go to sleep", tasknum:"", taskstyle:""}];`
-
-*/
-
-//SE EVENT LISTENER HERE BASED ON COMMENTED TEXT FROM ABOVE WHICH IS OUR CONSOLE LOG OUTPUT FOR THE TARGET CP REDEMPTION (REWARD-ID)
+//SE EVENT LISTENER
 window.addEventListener('onEventReceived', function (obj) {
     const listener = obj.detail.listener;
+  	// Object Data
     const data = obj["detail"]["event"];
+    // Chat Message Data
   	const msgdata = obj["detail"]["event"]["data"];
+    // Print all tasks into html
+    let text = "";
+  	function updateDisplay() {
+    for(let i = 0; i < tasks.length; i++){
+      text += tasks[i].username;
+    };
+    $("#jstasks").text(text);
+    };
+    // Add new chat event to array
+  	if (msgdata["text"].startsWith("!taskadd ")) {
+    tasks.push({username: msgdata["displayName"], task: msgdata["text"], status:"new"});
+    updateDisplay();
+    };
+    if (msgdata["text"].startsWith("!taskdone")) {
+    };
+  	if (msgdata["text"].startsWith("!taskskip")) {
+    };
+  	if (msgdata["text"].startsWith("!taskup")) {
+    };
+  	if (msgdata["text"].startsWith("!taskdown")) {
+    };
   
+    
+    /*let filtered = tasks.filter(task=>task.username===username)*/
+    
+  
+  	console.log(tasks);
   /*
   IF msgdata["text"] starts with !taskadd, add the task to some sort of variable which we dunno yet
     everything after !taskaddSPACE is our task message
@@ -42,12 +65,7 @@ window.addEventListener('onEventReceived', function (obj) {
   DATA:
   Make it so the data stores across sessions and then just resets when streamer goes offline for more than X mins
   */
-  
-   $("#jstasks").text(msgdata["text"]
-                     + msgdata["user-id"]
-                     + msgdata["displayName"]
-                     + eventsLimit
-                     );
+ 
     /*$("#actionContainer").html(listener);*/
 
 });
