@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+
+.wrapper {
+	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+	border: 5px solid #000000;
+  	padding: 0px 0px;
+  	margin: 0px 0px;
+}
+
+.yellowbg {
+	background-color: #fdfd96;  
+}
+
+.bluelines {
+    	background: repeating-linear-gradient(-180deg, #779ecb 0px, #779ecb 1px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 4vw);
+}
+
+.yellowtop {
+      	background: repeating-linear-gradient(-180deg, #fdfd96 0px, #fdfd96 12vw, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 100vh);
+
+}
+
+.redlinetop {
+    border: none;
+  	padding: 0px 0px;
+  	margin: 0px 0px;
+  	font-family:'Permanent Marker';
+  	font-size: 5vw;
+  	border-bottom: 2px solid #FF6961;
+  	margin-left: -8vw;
+  	line-height: 12vw;
+  	padding-left: 12vw;
+}
+
+.redlineleft {
+		border-left: 2px solid #FF6961;
+  		margin-left: 8vw;
+}
+
+.main {
+	width:90vw;
+  	height: 92.5vh;
+  	/*background-color: #ffffff;*/
+  	/*position: relative;
+  	top: 0px;
+  	left: 0px;*/
+	border: none;
+  	padding: 0px 0px;
+  	margin-left: 2vw;
+  	font-family:'Permanent Marker';
+  	font-size: 3vw;
+  	overflow-wrap: break-word;
+}
+
+
